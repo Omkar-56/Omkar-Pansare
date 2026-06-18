@@ -43,7 +43,7 @@ export default function Hero() {
           className="font-body text-xl text-espresso/60 font-light max-w-md leading-relaxed word-reveal"
           style={{ animationDelay: "0.75s" }}
         >
-          I build thoughtful digital experiences — clean code, warm interfaces, real craft.
+          Full-Stack Developer · Python & Node.js backends · React frontends · Open to full-time roles
         </p>
 
         <div
@@ -76,11 +76,6 @@ export default function Hero() {
           {/* Warm blob behind photo */}
           <div className="absolute -inset-3 rounded-full bg-sand -z-10" />
 
-          {/* 
-            ── TO REPLACE YOUR PHOTO ──
-            1. Add your photo to public/images/ (e.g. photo.jpg)
-            2. Change src below to "/images/photo.jpg"
-          */}
           <img
             src="/images/pfp.jpeg"
             alt="Omkar Pansare"

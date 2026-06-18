@@ -14,16 +14,10 @@ export default function About() {
 
         <div className="reveal space-y-5 font-body text-espresso/65 leading-relaxed text-[1.05rem]">
           <p>
-            Hey — I'm Omkar Pansare, a developer based in Pune. I love the
-            intersection of engineering and design: the place where good code meets
-            something that actually feels good to use.
+            Hey — I'm Omkar Pansare, a full-stack developer based in Pune. I design and build complete web applications — REST APIs, database architecture, and server-side logic in Python and Node.js, paired with clean React frontends. PostgreSQL is my go-to for data, and I've kept my fundamentals sharp with 100+ problems solved on LeetCode.
           </p>
           <p>
-            I've been building for the web for 2 years, working across PERN stack. When I'm not coding, you'll find me gaming or playing badminton.
-          </p>
-          <p>
-            I believe software should feel warm and human. Every project is a chance
-            to get that a little more right.
+            Currently open to full-time roles. If you're building something that needs a developer, I'd love to talk.
           </p>
 
           <div className="pt-4">
