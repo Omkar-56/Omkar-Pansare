@@ -22,7 +22,7 @@ export default function About() {
 
           <div className="pt-4">
             <a
-              href="/resume.pdf"
+              href="/Omkar_Pansare.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-terracotta hover:gap-3 transition-all duration-200"
