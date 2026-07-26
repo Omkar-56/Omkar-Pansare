@@ -77,7 +77,7 @@ export default function Hero() {
           <div className="absolute -inset-3 rounded-full bg-sand -z-10" />
 
           <img
-            src="/images/pfp.jpeg"
+            src="/images/my_photo.png"
             alt="Omkar Pansare"
             className="w-64 h-64 rounded-full object-cover object-center ring-4 ring-sand"
           />
