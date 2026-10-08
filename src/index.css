@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 * {
   box-sizing: border-box;
@@ -71,14 +71,59 @@ body {
   transform: translateY(-2px);
 }
 
-/* Project card */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 3D Flip Card */
+.flip-card {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(44, 26, 14, 0.1);
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg) translateZ(1px);
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg) translateZ(1px);
+  z-index: 1;
+}
+
+.flip-card:hover .flip-card-back,
+.flip-card:focus-within .flip-card-back,
+.flip-card.is-flipped .flip-card-back {
+  z-index: 3;
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:focus-within .flip-card-front,
+.flip-card.is-flipped .flip-card-front {
+  pointer-events: none;
 }
 
 /* Nav link underline */
@@ -102,7 +147,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, .reveal, .word-reveal, .animate-fade-up {
+  *, .reveal, .word-reveal, .animate-fade-up, .flip-card-inner {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
