@@ -20,71 +20,73 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center px-6 pt-24 pb-16 max-w-5xl mx-auto"
+      className="min-h-screen flex items-center justify-center px-6 py-16 max-w-5xl mx-auto"
     >
-      {/* Left: text */}
-      <div className="flex-1">
-        <div className="animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          <span className="inline-flex items-center gap-2 text-sm font-body text-espresso/50 mb-8 tracking-wide uppercase">
-            <span className="w-2 h-2 rounded-full bg-sage animate-breathe inline-block" />
-            Available for work
-          </span>
+      <div className="w-full flex flex-col md:flex-row items-center justify-between">
+        {/* Left: text */}
+        <div className="flex-1">
+          <div className="animate-fade-up" style={{ animationDelay: "0.05s" }}>
+            <span className="inline-flex items-center gap-2 text-xs font-body text-espresso/50 mb-6 md:mb-8 tracking-wide uppercase">
+              <span className="w-2 h-2 rounded-full bg-sage animate-breathe inline-block" />
+              Available for work
+            </span>
+          </div>
+
+          <h1 className="font-display text-5xl md:text-7xl font-light text-espresso leading-[1.05] mb-6 md:mb-8">
+            <HeroName text="Hi, I'm" />
+            <br />
+            <span className="italic text-terracotta">
+              <HeroName text="Omkar Pansare" />
+            </span>
+          </h1>
+
+          <p
+            className="font-body text-lg md:text-xl text-espresso/60 font-light max-w-md leading-relaxed word-reveal"
+            style={{ animationDelay: "0.75s" }}
+          >
+            Full-Stack Developer · Python &amp; Node.js backends · React frontends · Open to full-time roles
+          </p>
+
+          <div
+            className="mt-8 md:mt-12 flex items-center gap-6 word-reveal"
+            style={{ animationDelay: "0.95s" }}
+          >
+            <a
+              href="#projects"
+              className="bg-espresso text-cream font-body text-sm font-medium px-7 py-3.5 rounded-full hover:bg-terracotta transition-colors duration-300 shadow-sm"
+            >
+              See my work
+            </a>
+            <a
+              href="#contact"
+              className="text-espresso font-body text-sm font-medium underline underline-offset-4 decoration-sand-dark hover:decoration-terracotta transition-colors duration-300"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
 
-        <h1 className="font-display text-6xl md:text-7xl font-light text-espresso leading-[1.05] mb-8">
-          <HeroName text="Hi, I'm" />
-          <br />
-          <span className="italic text-terracotta">
-            <HeroName text="Omkar Pansare" />
-          </span>
-        </h1>
-
-        <p
-          className="font-body text-xl text-espresso/60 font-light max-w-md leading-relaxed word-reveal"
-          style={{ animationDelay: "0.75s" }}
-        >
-          Full-Stack Developer · Python & Node.js backends · React frontends · Open to full-time roles
-        </p>
-
+        {/* Right: photo */}
         <div
-          className="mt-12 flex items-center gap-6 word-reveal"
-          style={{ animationDelay: "0.95s" }}
+          className="hidden md:flex flex-shrink-0 ml-16 word-reveal"
+          style={{ animationDelay: "0.4s" }}
         >
-          <a
-            href="#projects"
-            className="bg-espresso text-cream font-body text-sm font-medium px-7 py-3.5 rounded-full hover:bg-terracotta transition-colors duration-300"
-          >
-            See my work
-          </a>
-          <a
-            href="#contact"
-            className="text-espresso font-body text-sm font-medium underline underline-offset-4 decoration-sand-dark hover:decoration-terracotta transition-colors duration-300"
-          >
-            Get in touch
-          </a>
-        </div>
-      </div>
+          <div className="relative">
+            {/* Decorative ring */}
+            <div className="absolute inset-0 rounded-full border-2 border-terracotta/20 scale-110" />
+            {/* Warm blob behind photo */}
+            <div className="absolute -inset-3 rounded-full bg-sand -z-10" />
 
-      {/* Right: photo */}
-      <div
-        className="hidden md:flex flex-shrink-0 ml-16 word-reveal"
-        style={{ animationDelay: "0.4s" }}
-      >
-        <div className="relative">
-          {/* Decorative ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-terracotta/20 scale-110" />
-          {/* Warm blob behind photo */}
-          <div className="absolute -inset-3 rounded-full bg-sand -z-10" />
+            <img
+              src="/images/my_photo_zoomed_out.png"
+              alt="Omkar Pansare"
+              className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover object-center ring-4 ring-sand shadow-lg"
+            />
 
-          <img
-            src="/images/my_photo_zoomed_out.png"
-            alt="Omkar Pansare"
-            className="w-64 h-64 rounded-full object-cover object-center ring-4 ring-sand"
-          />
-
-          {/* Floating badge */}
-          <div className="absolute -bottom-2 -right-2 bg-espresso text-cream text-xs font-body rounded-full px-4 py-2 shadow-md">
-            Open to work ✦
+            {/* Floating badge */}
+            <div className="absolute -bottom-2 -right-2 bg-espresso text-cream text-xs font-body rounded-full px-4 py-2 shadow-md">
+              Open to work &#10022;
+            </div>
           </div>
         </div>
       </div>

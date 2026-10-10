@@ -11,11 +11,11 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-cream/90 backdrop-blur-sm shadow-sm" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-cream/90 backdrop-blur-sm shadow-xs border-b border-sand-dark/40" : "bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 py-4 md:py-5 flex items-center justify-between">
         <a
           href="#hero"
           className="font-display text-lg font-semibold text-espresso tracking-tight"
