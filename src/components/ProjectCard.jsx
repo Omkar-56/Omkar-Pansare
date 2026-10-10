@@ -61,7 +61,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <div
-      className={`flip-card group h-[340px] w-full cursor-pointer select-none ${isFlipped ? "is-flipped" : ""}`}
+      className={`flip-card group h-[260px] w-full cursor-pointer select-none ${isFlipped ? "is-flipped" : ""}`}
       onClick={() => setIsFlipped((prev) => !prev)}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -73,47 +73,47 @@ export default function ProjectCard({ project }) {
       role="region"
       aria-label={`${name} project card. Click, press Enter or Space to flip.`}
     >
-      <div className="flip-card-inner rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <div className="flip-card-inner rounded-2xl shadow-xs hover:shadow-lg transition-all duration-300">
         {/* ──────── FRONT FACE ──────── */}
-        <div className="flip-card-front bg-sand rounded-2xl p-5 flex flex-col justify-between border border-sand-dark/40">
+        <div className="flip-card-front bg-sand rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-sand-dark/60 group-hover:border-terracotta/40 transition-colors">
           {/* Top metadata & Title */}
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] font-body font-semibold tracking-wide text-terracotta bg-cream/70 border border-sand-dark/50 px-2.5 py-0.5 rounded-full uppercase">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[10px] font-body font-medium tracking-wide text-terracotta bg-cream/80 border border-sand-dark/50 px-2 py-0.5 rounded-full uppercase">
                 {category}
               </span>
               <span className="text-[11px] font-body text-espresso/45 font-medium">{year}</span>
             </div>
 
-            <h3 className="font-display text-xl font-light text-espresso group-hover:text-terracotta transition-colors duration-200 mb-2 leading-tight">
+            <h3 className="font-display text-lg font-light text-espresso group-hover:text-terracotta transition-colors duration-200 mb-1.5 leading-snug">
               {name}
             </h3>
-            <p className="font-body text-xs text-espresso/65 leading-relaxed line-clamp-3">
+            <p className="font-body text-xs text-espresso/65 leading-relaxed line-clamp-2">
               {description}
             </p>
           </div>
 
           {/* Front Bottom */}
-          <div className="space-y-3 pt-2">
+          <div className="space-y-2 pt-1">
             {/* Stack preview */}
             <div className="flex flex-wrap gap-1">
               {stack.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="text-[10px] font-body text-espresso/60 bg-cream/60 border border-sand-dark/50 rounded-md px-2 py-0.5"
+                  className="text-[10px] font-body text-espresso/60 bg-cream/70 border border-sand-dark/50 rounded px-2 py-0.5"
                 >
                   {tech}
                 </span>
               ))}
               {stack.length > 3 && (
-                <span className="text-[10px] font-body text-espresso/40 self-center pl-1">
+                <span className="text-[10px] font-body text-espresso/45 self-center pl-1">
                   +{stack.length - 3} more
                 </span>
               )}
             </div>
 
             {/* Flip hint prompt */}
-            <div className="flex items-center justify-between pt-2.5 border-t border-sand-dark/60 text-[11px] font-body text-espresso/50">
+            <div className="flex items-center justify-between pt-2 border-t border-sand-dark/60 text-[11px] font-body text-espresso/50">
               <span className="inline-flex items-center gap-1 text-terracotta font-medium group-hover:translate-x-0.5 transition-transform duration-200">
                 <span>Hover or tap to explore</span>
                 <span aria-hidden="true">&rarr;</span>
@@ -126,10 +126,10 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* ──────── BACK FACE ──────── */}
-        <div className="flip-card-back bg-[#EDE3D3] rounded-2xl p-5 flex flex-col justify-between border border-sand-dark/80">
+        <div className="flip-card-back bg-[#EDE3D3] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-sand-dark/80 shadow-md">
           {/* Header & Highlights */}
           <div>
-            <div className="flex items-center justify-between gap-2 border-b border-sand-dark/60 pb-2 mb-2.5">
+            <div className="flex items-center justify-between gap-2 border-b border-sand-dark/60 pb-1.5 mb-2">
               <h4 className="font-display text-base font-light text-espresso truncate">
                 {name}
               </h4>
@@ -140,15 +140,15 @@ export default function ProjectCard({ project }) {
 
             {/* Highlights */}
             {highlights && highlights.length > 0 && (
-              <div className="mb-2.5">
-                <span className="text-[9px] font-body tracking-wider uppercase text-espresso/45 font-semibold block mb-1.5">
+              <div className="mb-2">
+                <span className="text-[9px] font-body tracking-wider uppercase text-espresso/45 font-semibold block mb-1">
                   Key Highlights
                 </span>
-                <ul className="space-y-1.5">
-                  {highlights.map((item, idx) => (
+                <ul className="space-y-1">
+                  {highlights.slice(0, 2).map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-1.5 text-[11px] font-body text-espresso/80 leading-snug"
+                      className="flex items-start gap-1.5 text-[11px] font-body text-espresso/80 leading-snug line-clamp-1"
                     >
                       <SparkleIcon />
                       <span>{item}</span>
@@ -160,23 +160,21 @@ export default function ProjectCard({ project }) {
           </div>
 
           {/* Back Bottom: Tech stack & Links */}
-          <div className="space-y-2.5 pt-1">
+          <div className="space-y-2 pt-1">
             {/* Full Stack tags */}
-            <div>
-              <div className="flex flex-wrap gap-1">
-                {stack.map((t) => (
-                  <span
-                    key={t}
-                    className="text-[10px] font-body text-espresso/70 bg-cream/70 border border-sand-dark/60 rounded-full px-2 py-0.5"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-1">
+              {stack.slice(0, 5).map((t) => (
+                <span
+                  key={t}
+                  className="text-[10px] font-body text-espresso/70 bg-sand border border-sand-dark/60 rounded px-2 py-0.5"
+                >
+                  {t}
+                </span>
+              ))}
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-2 pt-2 border-t border-sand-dark/60">
+            <div className="flex items-center gap-2 pt-1.5 border-t border-sand-dark/60">
               {liveUrl ? (
                 <>
                   <a
@@ -184,7 +182,7 @@ export default function ProjectCard({ project }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center justify-center gap-1 flex-1 py-1.5 px-2.5 rounded-full bg-terracotta text-cream text-[11px] font-body font-medium hover:bg-espresso transition-all duration-200 shadow-sm"
+                    className="inline-flex items-center justify-center gap-1 flex-1 py-1.5 px-2.5 rounded-full bg-terracotta text-cream text-[11px] font-body font-medium hover:bg-espresso transition-all duration-200 shadow-xs"
                   >
                     <ExternalLinkIcon />
                     <span>Live Demo</span>
@@ -195,7 +193,7 @@ export default function ProjectCard({ project }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center gap-1 flex-1 py-1.5 px-2.5 rounded-full bg-espresso text-cream text-[11px] font-body font-medium hover:bg-terracotta transition-all duration-200 shadow-sm"
+                      className="inline-flex items-center justify-center gap-1 flex-1 py-1.5 px-2.5 rounded-full bg-espresso text-cream text-[11px] font-body font-medium hover:bg-terracotta transition-all duration-200 shadow-xs"
                     >
                       <GithubIcon />
                       <span>GitHub</span>
@@ -209,7 +207,7 @@ export default function ProjectCard({ project }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center justify-center gap-1.5 w-full py-1.5 px-3 rounded-full bg-espresso text-cream text-[11px] font-body font-medium hover:bg-terracotta transition-all duration-200 shadow-sm"
+                    className="inline-flex items-center justify-center gap-1.5 w-full py-1.5 px-3 rounded-full bg-espresso text-cream text-[11px] font-body font-medium hover:bg-terracotta transition-all duration-200 shadow-xs"
                   >
                     <GithubIcon />
                     <span>View Repository on GitHub</span>
