@@ -94,7 +94,6 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="border-[1.8px] border-[#2c2e35] bg-transparent hover:bg-[#2c2e35] hover:text-[#fef5da] text-[#2c2e35] font-body font-bold text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-sm hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 inline-flex items-center gap-2.5"
           >
-            <PlayTriangleIcon className="w-2.5 h-2.5" />
             <span>View Resume</span>
           </a>
         </div>
