@@ -12,6 +12,7 @@ const projects = [
     stack: ["React", "Node.js", "Express", "PostgreSQL", "Gemini AI", "Tailwind CSS"],
     liveUrl: "https://sub-track-silk.vercel.app",
     githubUrl: "https://github.com/Omkar-56/SubTrack",
+    image: "/images/projects/subtrack.webp",
     year: "2026",
   },
   {
@@ -27,6 +28,7 @@ const projects = [
     stack: ["React", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
     liveUrl: "https://unalone-flax.vercel.app/",
     githubUrl: "https://github.com/Omkar-56/unalone",
+    image: "/images/projects/unalone.webp",
     year: "2026",
   },
   {
@@ -42,6 +44,7 @@ const projects = [
     stack: ["React", "Node.js", "Express", "PostgreSQL", "MinIO / S3"],
     liveUrl: null,
     githubUrl: "https://github.com/Omkar-56/Personal-Cloud-Storage",
+    image: "/images/projects/cloud-storage.webp",
     year: "2025",
   },
   {
@@ -57,6 +60,7 @@ const projects = [
     stack: ["Python", "PyTorch", "Go", "React", "gRPC", "Docker"],
     liveUrl: null,
     githubUrl: "https://github.com/Omkar-56/DF-Detector",
+    image: "/images/projects/df-detector.webp",
     year: "2025",
   },
   {
@@ -72,6 +76,7 @@ const projects = [
     stack: ["TensorFlow", "FastAPI", "React", "Docker", "Tailwind CSS"],
     liveUrl: null,
     githubUrl: "https://github.com/Omkar-56/Leaf-Classification-and-Segmentation",
+    image: "/images/projects/leaf-classifier.webp",
     year: "2025",
   },
 ];
