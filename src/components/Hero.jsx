@@ -43,13 +43,13 @@ function MailIcon({ className = "w-4 h-4" }) {
 }
 
 /* Play triangle icon for Button 2 */
-function PlayTriangleIcon({ className = "w-2.5 h-2.5" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <polygon points="5 3 19 12 5 21 5 3" />
-    </svg>
-  );
-}
+// function PlayTriangleIcon({ className = "w-2.5 h-2.5" }) {
+//   return (
+//     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+//       <polygon points="5 3 19 12 5 21 5 3" />
+//     </svg>
+//   );
+// }
 
 export default function Hero() {
   const socials = [
