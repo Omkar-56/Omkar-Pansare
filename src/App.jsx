@@ -1,26 +1,37 @@
+import { useState } from "react";
 import useReveal from "./hooks/useReveal";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import WhatIDo from "./components/WhatIDo";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import OtherThings from "./components/OtherThings";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function App() {
-  useReveal();
+  const [isLoading, setIsLoading] = useState(true);
+  useReveal([isLoading]);
 
   return (
-    <div className="relative">
-bg-cream text-espresso       <Nav />
-      <Hero />
-      <div className="border-t border-sand-dark/30 max-w-5xl mx-auto px-6" />
-      <About />
-      <div className="border-t border-sand-dark/30 max-w-5xl mx-auto px-6" />
-      <Projects />
-      <div className="border-t border-sand-dark/30 max-w-5xl mx-auto px-6" />
-      <Skills />
-      <div className="border-t border-sand-dark/30 max-w-5xl mx-auto px-6" />
-      <Contact />
-    </div>
+    <>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      <div
+        id="scroll-container"
+        className="relative bg-paper text-ink w-full h-full overflow-y-auto overflow-x-hidden selection:bg-accent-rust selection:text-white"
+      >
+        <Nav />
+        <Hero />
+        <div className="border-t-2 border-ink/10 max-w-6xl mx-auto px-6" />
+        <WhatIDo />
+        <div className="border-t-2 border-ink/10 max-w-6xl mx-auto px-6" />
+        <Projects />
+        <div className="border-t-2 border-ink/10 max-w-6xl mx-auto px-6" />
+        <OtherThings />
+        <div className="border-t-2 border-ink/10 max-w-6xl mx-auto px-6" />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
